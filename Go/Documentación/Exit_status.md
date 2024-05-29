@@ -35,3 +35,5 @@ func main() {
 ```
 
 ### **Se puede usar con el Manejo de Errores**
+
+_Usando `echo $?` podemos ver el ultimo código de status_
