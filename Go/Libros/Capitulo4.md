@@ -2,7 +2,8 @@
 
 ## Paquetes en Go
 
-Los paquetes en Go son unidades de organización que agrupan código relacionado. Su estructura sigue la jerarquía de directorios en el workspace de Go. Al importar un paquete, se debe especificar la ruta completa desde la raíz del workspace.
+- Unidades de organización de código
+- Estructura jerárquica en el workspace
 
 ### Ejemplo de uso de paquetes
 
@@ -48,11 +49,12 @@ func main() {
 
 ## Importaciones cíclicas en Go
 
-Las importaciones cíclicas en Go se producen cuando dos o más paquetes se importan mutuamente. Esto puede generar problemas de compilación, ya que el compilador no puede determinar el orden en que se deben cargar los paquetes.
+Problemas de compilación por importaciones mutuas
 
 ## Visibilidad
 
-En Go, la visibilidad de los identificadores está determinada por si su nombre comienza con mayúscula o minúscula. Los identificadores que comienzan con mayúscula son visibles fuera del paquete, mientras que los que comienzan con minúscula son privados dentro del paquete.
+**Identificadores con mayúscula: públicos**
+**Identificadores con minúscula: privados**
 
 ```go
 // Ejemplo de función con visibilidad:
@@ -63,9 +65,7 @@ func NewItem() *Item {
 
 ## Gestión de Paquetes
 
-go get se utiliza para obtener dependencias de terceros en Go. También hay herramientas adicionales como goop y godep para gestionar dependencias de forma más avanzada.
-
-**Comando go get para obtener una dependencia de Github:**
+**Comando go get para obtener una dependencia de terceros**
 
 ```go
 go get github.com/mattn/go-sqlite3
@@ -79,17 +79,30 @@ import (
 
 ## Gestión de Dependencias
 
-go get guarda un par de ases bajo la manga. Si usamos go get en un proyecto se escanearán todos los ficheros buscando imports con librerías de terceros y las descargará. En cierta medida, nuestro propio código fuente se convierte en un Gemfile, un package.json, un pom.xml o un build.gradle.
-Si utilizas go get -u actualizarás todos los paquetes (también puedes actualizar un paquete específico usando go get -u NOMBRE_COMPLETO_DEL_PAQUETE)
-Puedes usar una herramienta de gestión de dependencias de terceros. Todavía son jóvenes pero las dos más prometedoras son goop y godep. Hay una lista más completa en la go-wiki.
+### go get
+- Escanea ficheros por imports de librerías de terceros
+- Descarga librerías automáticamente
+- Funciona como:
+  - Gemfile
+  - package.json
+  - pom.xml
+  - build.gradle
 
-```go
-go get
-```
+### Actualización de Paquetes
+- `go get -u`
+  - Actualiza todos los paquetes
+  - Ejemplo para un paquete específico:
+    ```bash
+    go get -u NOMBRE_COMPLETO_DEL_PAQUETE
+    ```
+
+### Herramientas de Terceros
+- goop
+- godep
+- Lista completa en la go-wiki
+
 
 ## Interfaces
-
-Los interfaces en Go son tipos que especifican un contrato sin contener implementación. Permiten desacoplar el código de implementaciones específicas.
 
 ```go
 // Ejemplo de definición de interfaz Logger
@@ -100,7 +113,7 @@ type Logger interface {
 
 **Uso de Interfaces:**
 
-Los interfaces se utilizan de la misma manera que cualquier otro tipo en Go. Pueden ser campos de una estructura o parámetros de funciones.
+Pueden ser campos de estructuras o parámetros de funciones
 
 ```go
 // Ejemplo de estructura con un campo de tipo Logger
@@ -116,9 +129,9 @@ func process(logger Logger) {
 
 **Implementación de Interfaces:**
 
-Una estructura puede implementar una interfaz si tiene una función con la firma requerida por la interfaz.
+Una estructura implementa una interfaz si tiene una función con la firma requerida
 
-```g
+```go
 // Implementación de la interfaz Logger mediante una estructura ConsoleLogger
 type ConsoleLogger struct {}
 

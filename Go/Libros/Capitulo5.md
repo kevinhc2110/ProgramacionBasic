@@ -2,7 +2,7 @@
 
 ## Gestión de Errores
 
-**La gestión de errores en Go se realiza mediante valores de retorno, no excepciones. Por ejemplo, la función strconv.Atoi convierte un string a entero:**
+**Mediante valores de retorno, no excepciones:**
 
 ```go
 package main
@@ -121,11 +121,9 @@ default:
 }
 ```
 
-Las interfaces vacías se utilizan con frecuencia para manipular datos de tipos desconocidos. Aunque puede no ser la forma más limpia de escribir código, a veces es la única opción en lenguajes estáticos.
-
 ## Strings y Arrays de Bytes
 
-**Los strings y los arrays de bytes están estrechamente relacionados en Go, y podemos convertir entre ellos fácilmente:**
+**Conversión entre strings y arrays de bytes**
 
 ```go
 stra := "the spice must flow"
@@ -133,23 +131,19 @@ byts := []byte(stra)
 strb := string(byts)
 ```
 
-De hecho, este tipo de conversión es común entre otros tipos también. Por ejemplo, algunas funciones esperan explícitamente un int32 o un int64, o sus homólogos sin signo. Por lo tanto, es posible que te encuentres haciendo conversiones como esta:
+**Conversión entre tipos**
 
 ```go
 int64(count)
 ```
 
-Es algo que probablemente acabes haciendo con frecuencia cuando utilices bytes y strings. Es importante tener en cuenta que cuando utilizas []byte(X) o string(X), se realiza una copia de los datos. Esto es necesario ya que los strings son inmutables.
-
-Los strings están compuestos de runas, que son letras Unicode. Por lo tanto, si intentas recuperar la longitud de un string, es posible que no obtengas el valor que esperas. Por ejemplo, el siguiente código imprimirá 3:
+**Longitud de strings y caracteres Unicode**
 
 ```go
 fmt.Println(len(" ahora esto"))
 ```
 
-Esto se debe a que el string contiene caracteres Unicode, y la función len cuenta el número de bytes en el string, no el número de caracteres. Cada carácter Unicode puede ocupar más de un byte en memoria.
-
-Si iteras sobre un string utilizando range, obtendrás las runas en lugar de los bytes. Sin embargo, cuando conviertes un string en un []byte, obtienes los datos correctos.
+**Iterar sobre un string usando range**
 
 ## Funciones con Tipo
 
@@ -159,7 +153,7 @@ Si iteras sobre un string utilizando range, obtendrás las runas en lugar de los
 type Add func(a int, b int) int
 ```
 
-Esto significa que las funciones pueden ser utilizadas en cualquier lugar, como tipo de un campo, como parámetro o como valor de retorno. Por ejemplo:
+## Ejemplo de uso de funciones con tipo
 
 ```go
 package main
@@ -179,4 +173,4 @@ func process(adder Add) int {
 }
 ```
 
-El uso de funciones como esta puede ayudar a desacoplar el código de implementaciones específicas, al igual que lo hacemos con los interfaces.
+
