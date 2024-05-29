@@ -8,6 +8,9 @@ import (
  "strings"
 )
 
+// Nota: los " se usan para saber donde empieza y termina un string, el " tiene el valor '/0' osea carácter Nul
+// Si el carácter está en minúsculas, le resta el valor 32 para convertirlo a mayúsculas (ASCII)
+
 func main() {
 
  // Acceso a caracteres específicos

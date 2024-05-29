@@ -24,7 +24,7 @@ Una vez que has importado un paquete en tu archivo de código, puedes utilizar s
 
 ## Estructura de paquetes
 
-```go
+```bash
 myproject/
 │
 ├── cmd/
@@ -52,7 +52,7 @@ myproject/
 
 o
 
-```go
+```bash
 GOPATH/
 │
 ├── src/

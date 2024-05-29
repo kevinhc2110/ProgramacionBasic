@@ -13,71 +13,82 @@ import (
 //Declaración de variables
 
 func variables() /*main*/  {
- var num int = 3
- var name string = "KevinDev"
+  var num int = 3
+  var name string = "KevinDev"
 
- fmt.Println(num, name)
+  fmt.Println(num, name)
 
- // Declara e inicializa múltiples variables
+  // Declara e inicializa múltiples variables
 
- var a, b, c int = 1, 2, 3
+  var a, b, c int = 1, 2, 3
 
- fmt.Println(a, b, c)
+  fmt.Println(a, b, c)
 
- num = 0
- name = "Sofia"
+  num = 0
+  name = "Sofia"
 
- var num2 = 0;
- var name2 string = "Dev"
+  var num2 = 0;
+  var name2 string = "Dev"
 
- fmt.Println(num2, name2)
+  fmt.Println(num2, name2)
 
- // num2 = "" Seria un error porque el tipo que tomo anteriormente fue de int
+  // num2 = "" Seria un error porque el tipo que tomo anteriormente fue de int
 
- num2 = num2 + 8
- fmt.Println(num2)
+  num2 = num2 + 8
+  fmt.Println(num2)
 
- fmt.Println(num2 - 1)
+  fmt.Println(num2 - 1)
 
- // Concatenar tipos diferentes
+  // Concatenar tipos diferentes
 
- fmt.Println(name2, num2)
+  fmt.Println(name2, num2)
 
- // Mostrar el tipo por consola
+  // Mostrar el tipo por consola
 
- fmt.Println(reflect.TypeOf(num))
+  fmt.Println(reflect.TypeOf(num))
 
- // Sumar entero y float
+  // Sumar entero y float
 
- var float1 float64 = 6.5
- fmt.Println(float1 + float64(num2))
+  var float1 float64 = 6.5
+  fmt.Println(float1 + float64(num2))
 
- // Mas tipos de datos
+  // Typecast
+  // Convertir una variable de un tipo de dato a otro
 
- // Booleans
+  func average(length int, array []int) float64 {
+      sum := 0
+      for i := 0; i < length; i++ {
+          sum += array[i]
+      }
+      return float64(sum) / float64(length)
+  }
 
- var bool1 bool = false
- fmt.Println(bool1)
+  // Mas tipos de datos
 
- // Complejos
+  // Booleans
 
- var complejo complex128 = 2 + 3i
- fmt.Println(complejo)
+  var bool1 bool = false
+  fmt.Println(bool1)
 
- // Caracteres
+  // Complejos
 
- var caracter rune = 'a'
- fmt.Println(caracter)
+  var complejo complex128 = 2 + 3i
+  fmt.Println(complejo)
 
- // Evitar usar el var para declarar e inicializar
+  // Caracteres
 
- name3 := "Papi";
- fmt.Println(name3)
+  var caracter rune = 'a'
+  fmt.Println(caracter)
 
- // Constantes
+  // Evitar usar el var para declarar e inicializar
 
- const myConst = "Kevin Llora"
- fmt.Println(myConst)
+  name3 := "Papi";
+  fmt.Println(name3)
+
+  // Constantes
+
+  const myConst = "Kevin Llora"
+  fmt.Println(myConst)
 }
 ```
 

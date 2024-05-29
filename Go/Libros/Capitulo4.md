@@ -65,13 +65,13 @@ func NewItem() *Item {
 
 ## Gestión de Paquetes
 
-**Comando go get para obtener una dependencia de terceros**
+**Comando go get para obtener una dependencia de terceros:**
 
-```go
+```bash
 go get github.com/mattn/go-sqlite3
 ```
 
-```go
+```bash
 import (
 "github.com/mattn/go-sqlite3"
 )
@@ -80,6 +80,7 @@ import (
 ## Gestión de Dependencias
 
 ### go get
+
 - Escanea ficheros por imports de librerías de terceros
 - Descarga librerías automáticamente
 - Funciona como:
@@ -89,18 +90,20 @@ import (
   - build.gradle
 
 ### Actualización de Paquetes
+
 - `go get -u`
   - Actualiza todos los paquetes
   - Ejemplo para un paquete específico:
-    ```bash
-    go get -u NOMBRE_COMPLETO_DEL_PAQUETE
-    ```
+
+```bash
+go get -u NOMBRE_COMPLETO_DEL_PAQUETE
+```
 
 ### Herramientas de Terceros
+
 - goop
 - godep
 - Lista completa en la go-wiki
-
 
 ## Interfaces
 

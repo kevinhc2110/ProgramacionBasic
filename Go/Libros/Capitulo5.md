@@ -88,7 +88,7 @@ func main() {
 
 **El comando go fmt formatea el código según las reglas de formato de Go:**
 
-```go
+```bash
 go fmt ./...
 ```
 
@@ -123,7 +123,7 @@ default:
 
 ## Strings y Arrays de Bytes
 
-**Conversión entre strings y arrays de bytes**
+**Conversión entre strings y arrays de bytes:**
 
 ```go
 stra := "the spice must flow"
@@ -131,19 +131,19 @@ byts := []byte(stra)
 strb := string(byts)
 ```
 
-**Conversión entre tipos**
+**Conversión entre tipos:**
 
 ```go
 int64(count)
 ```
 
-**Longitud de strings y caracteres Unicode**
+**Longitud de strings y caracteres Unicode:**
 
 ```go
 fmt.Println(len(" ahora esto"))
 ```
 
-**Iterar sobre un string usando range**
+**Iterar sobre un string usando range:**
 
 ## Funciones con Tipo
 
@@ -172,5 +172,3 @@ func process(adder Add) int {
     return adder(1, 2)
 }
 ```
-
-

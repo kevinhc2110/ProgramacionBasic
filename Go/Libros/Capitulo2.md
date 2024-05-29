@@ -5,7 +5,10 @@
 **Definición de la estructura Saiyan:**
 
 ```go
-
+type Saiyan struct {
+    Name string
+    Power int
+}
 ```
 
 ## Métodos Asociados a Estructuras

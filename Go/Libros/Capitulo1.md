@@ -4,19 +4,19 @@
 
 **Ejecutar programa con fichero temporal:**
 
-```go
+```bash
 go run main.go
 ```
 
 **Compilar explícitamente (generar binario):**
 
-```go
+```bash
 go build main.go
 ```
 
 **inicializar un módulo Go:**
 
-```go
+```bash
 go mod init
 ```
 
