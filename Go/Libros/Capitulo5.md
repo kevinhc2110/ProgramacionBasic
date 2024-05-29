@@ -15,7 +15,7 @@ import (
 
 func main() {
     if len(os.Args) != 2 {
-        os.Exit(1)
+        os.Exit(1) // Salir y retornar 1
     }
     n, err := strconv.Atoi(os.Args[1])
     if err != nil {

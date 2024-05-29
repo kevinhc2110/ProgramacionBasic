@@ -88,3 +88,23 @@ Argument 1: arg1
 Argument 2: arg2
 Argument 3: arg3
 ```
+
+### Ejemplos prácticos
+
+**Configuración de una Aplicación:**
+
+```bash
+./myapp -config=/path/to/config.json
+```
+
+**Herramientas de Línea de Comandos:**
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"key":"value"}' http://example.com/api
+```
+
+**Control de Flujo:**
+
+```bash
+./dbtool -host=localhost -port=5432 -user=admin -password=secret
+```
