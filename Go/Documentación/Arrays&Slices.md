@@ -16,16 +16,20 @@ import "fmt"
 
 func main() {
 
- // Array
+  // Array
 
- var myArray [3]int
+  // Crear array
+  var myArray [3]int
 
- myArray[0] = 1
- myArray[1] = 1
- myArray[2] = 1
+  // Crear un array de strings con datos predefinidos
+  datos := [5]string{"dato1", "dato2", "dato3", "dato4", "dato5"}
 
- fmt.Println(myArray)
- fmt.Println(myArray[2])
+  myArray[0] = 1
+  myArray[1] = 1
+  myArray[2] = 1
+
+  fmt.Println(myArray)
+  fmt.Println(myArray[2])
 }
 ```
 
@@ -65,6 +69,9 @@ func main() {
  fmt.Println("Capacidad del slice:", cap(s))
 
  // Crear un slice con make especificando longitud y capacidad
+ // Longitud (Length): La longitud de un slice es el número de elementos que contiene actualmente.
+ // Capacidad (Capacity): La capacidad de un slice es el número máximo de elementos que puede contener sin tener que asignar más memoria.
+ // Puedes obtener la capacidad de un slice usando la función cap().
 
  s2 := make([]int, 3, 5) // longitud: 3, capacidad: 5
  fmt.Println("Slice s2:", s2)

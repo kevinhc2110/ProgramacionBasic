@@ -102,6 +102,7 @@ _float64: Números de punto flotante con precisión doble_
 _string: Datos de texto_
 _bool: Valores booleanos (verdadero o falso)_
 _También puedes definir tipos de datos personalizados como estructuras y slices._
+_"Runes" en Go se refiere al tipo de datos rune, que representa un punto de código Unicode._
 
 ## Alcance
 

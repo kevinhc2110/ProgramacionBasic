@@ -80,6 +80,12 @@ go build -o myprogram
 ./myprogram arg1 arg2 arg3
 ```
 
+**Podemos ejecutar sin compilar asi:**
+
+```bash
+go run main.go 9000
+```
+
 **Salida esperada:**
 
 ```bash
