@@ -2,7 +2,7 @@
 
 El Principio de Responsabilidad Única establece que una clase debe tener una, y solo una, razón para cambiar. En otras palabras, una clase debe estar enfocada en una única tarea o responsabilidad.
 
-## Ejemplo Correcto e Incorrecto en Go
+## Ejemplo Incorrecto
 
 ```go
 package main
