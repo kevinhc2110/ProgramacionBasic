@@ -24,8 +24,48 @@ package main
 import "fmt"
 
 func main() {
+
+    // Diferentes sintaxis
+
     var entero int = 42
     var puntero *int = &entero
     fmt.Println(*puntero)
+
+    var numero int = 10
+    numeroPtr := &numero
+
+    valor := *numeroPtr // Obtiene el valor almacenado en la dirección de memoria a la que apunta 'numeroPtr'
+    fmt.Println(valor)
 }
+```
+
+**Pasar punteros a funciones:**
+
+```go
+func modificarNumero(numeroPtr *int) {
+    *numeroPtr = *numeroPtr * 2 // Duplica el valor de la variable a la que apunta 'numeroPtr'
+}
+
+var numero int = 5
+numeroPtr := &numero
+modificarNumero(numeroPtr)
+fmt.Println(*numeroPtr) // Imprime el valor: 10 (el valor original se ha duplicado)
+```
+
+**Punteros a estructuras:**
+
+```go
+type Persona struct {
+    nombre string
+    edad int
+}
+
+func modificarEdad(personaPtr *Persona) {
+    personaPtr.edad = 30 // Modifica la edad de la persona a la que apunta 'personaPtr'
+}
+
+persona := Persona{nombre: "Juan", edad: 25}
+personaPtr := &persona
+modificarEdad(personaPtr)
+fmt.Println(personaPtr.edad) // Imprime la edad: 30 (la edad se ha modificado)
 ```
