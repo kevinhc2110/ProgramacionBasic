@@ -69,3 +69,35 @@ personaPtr := &persona
 modificarEdad(personaPtr)
 fmt.Println(personaPtr.edad) // Imprime la edad: 30 (la edad se ha modificado)
 ```
+
+**La Diversión de los Punteros en Go:**
+
+```go
+package main
+
+import "fmt"
+
+func cambiarValor(x *int) {
+    *x = 42
+}
+
+func main() {
+    a := 10
+    fmt.Println("Antes de cambiar:", a)
+
+    // Pasamos la dirección de memoria de a a la función
+    cambiarValor(&a)
+
+    fmt.Println("Después de cambiar:", a) // Imprime: 42
+}
+```
+
+_Declaramos una variable a con el valor 10._
+_La función cambiarValor recibe un puntero a un entero._
+_Dentro de la función, desreferenciamos el puntero (\*x) para acceder al valor en la dirección de memoria y lo cambiamos a 42._
+_Al imprimir a después de llamar a la función, vemos que su valor ha cambiado a 42._
+
+**Operador & y Desreferenciación:**
+
+&: Este operador toma la dirección de una variable. Por ejemplo, &a nos da la dirección de memoria de la variable a.
+\*: Este operador desreferencia un puntero, es decir, nos da el valor almacenado en la dirección de memoria a la que apunta el puntero.
