@@ -96,11 +96,11 @@ func variables() /*main*/  {
 
 _Go es un lenguaje de tipado estático, lo que significa que debes especificar el tipo de dato de una variable durante la declaración._
 **Los tipos de datos comunes incluyen:**
-_int: Enteros (números enteros)_
-_float32: Números de punto flotante con precisión de una sola precisión_
-_float64: Números de punto flotante con precisión doble_
-_string: Datos de texto_
-_bool: Valores booleanos (verdadero o falso)_
+_int:_ Enteros (números enteros)
+_float32:_ Números de punto flotante con precisión de una sola precisión
+_float64:_ Números de punto flotante con precisión doble
+_string:_ Datos de texto
+_bool:_ Valores booleanos (verdadero o falso)
 _También puedes definir tipos de datos personalizados como estructuras y slices._
 _"Runes" en Go se refiere al tipo de datos rune, que representa un punto de código Unicode._
 
