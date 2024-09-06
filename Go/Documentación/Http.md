@@ -4,7 +4,7 @@ En Go, el paquete net/http proporciona un conjunto completo de herramientas para
 
 ## Componentes principales
 
-**http.Client:** Representa un cliente HTTP que se utiliza para realizar peticiones.
+**http.Client:** Representa un cliente HTTP que se utiliza para realizar peticiones. Para realizar una petición GET, POST, PUT o DELETE, se utiliza el cliente http.Client.
 **http.Request:** Representa una petición HTTP que se envía al servidor.
 **http.Response:** Representa la respuesta HTTP recibida del servidor.
 
@@ -127,5 +127,35 @@ func PeticiónAPI() {
   fmt.Println("Bodega:", dato.Bodega)
   fmt.Println()
  }
+}
+```
+
+## Manejo de respuestas JSON
+
+Para decodificar respuestas JSON, se utiliza el paquete encoding/json. La función json.NewDecoder crea un decodificador que lee un flujo de bytes y lo convierte en una estructura de datos de Go.
+
+## APIs RESTful
+
+Una API RESTful es un estilo de arquitectura de software para diseñar interfaces de programación de aplicaciones (API) que utilizan HTTP como protocolo de comunicación. Se basa en los principios de REST (Representational State Transfer), que promueven la transferencia de estados entre el cliente y el servidor a través de operaciones HTTP estándar.
+
+```go
+package main
+
+import (
+        "encoding/json"
+        "net/http"
+)
+
+type User struct {
+        ID   int    `json:"id"`
+        Name string `json:"name"`
+}
+
+func main() {
+        http.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
+                users := []User{{1, "Alice"}, {2, "Bob"}}
+                json.NewEncoder(w).Encode(users)
+        })
+        http.ListenAndServe(":8080", nil)
 }
 ```
