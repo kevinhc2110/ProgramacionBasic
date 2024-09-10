@@ -86,3 +86,29 @@
 
 - **DLNA (Digital Living Network Alliance)**: Protocolo para compartir medios digitales entre dispositivos dentro de una red doméstica.
 - **UPnP (Universal Plug and Play)**: Protocolo que permite que los dispositivos se descubran y establezcan servicios automáticamente en redes locales.
+
+## Puertos Comunes y Protocolos
+
+| Protocolo      | Puerto Estándar | Descripción                                                                          |
+| -------------- | --------------- | ------------------------------------------------------------------------------------ |
+| **HTTP**       | 80              | Protocolo de Transferencia de Hipertexto, usado para navegación web.                 |
+| **HTTPS**      | 443             | HTTP seguro, cifrado con TLS/SSL.                                                    |
+| **FTP**        | 21              | Protocolo de Transferencia de Archivos.                                              |
+| **SFTP**       | 22              | FTP sobre SSH, protocolo seguro para transferencia de archivos.                      |
+| **SSH**        | 22              | Protocolo de Shell Seguro, para acceso remoto seguro.                                |
+| **Telnet**     | 23              | Protocolo para acceso remoto (no seguro).                                            |
+| **SMTP**       | 25              | Protocolo para envío de correos electrónicos.                                        |
+| **POP3**       | 110             | Protocolo para recepción de correos electrónicos.                                    |
+| **IMAP**       | 143             | Protocolo de acceso a correos electrónicos con capacidades avanzadas.                |
+| **DNS**        | 53              | Sistema de Nombres de Dominio, para resolución de nombres de dominio.                |
+| **DHCP**       | 67/68           | Protocolo de Configuración Dinámica de Host, para asignación automática de IPs.      |
+| **MySQL**      | 3306            | Puerto utilizado por el sistema de gestión de bases de datos MySQL.                  |
+| **PostgreSQL** | 5432            | Puerto utilizado por el sistema de gestión de bases de datos PostgreSQL.             |
+| **Redis**      | 6379            | Sistema de almacenamiento en caché y base de datos en memoria.                       |
+| **MongoDB**    | 27017           | Puerto utilizado por el sistema de gestión de bases de datos MongoDB.                |
+| **LDAP**       | 389             | Protocolo de Acceso Ligero a Directorios, utilizado para servicios de directorio.    |
+| **SNMP**       | 161             | Protocolo de Administración de Red Simple, utilizado para monitoreo de redes.        |
+| **NTP**        | 123             | Protocolo de Tiempo de Red, utilizado para sincronización de relojes en red.         |
+| **RDP**        | 3389            | Protocolo de Escritorio Remoto de Microsoft, para acceso remoto a escritorios.       |
+| **VNC**        | 5900            | Protocolo de Red de Computadoras Virtuales, para control remoto de escritorios.      |
+| **HTTP/2**     | 443             | Versión mejorada del protocolo HTTP, generalmente utiliza el mismo puerto que HTTPS. |

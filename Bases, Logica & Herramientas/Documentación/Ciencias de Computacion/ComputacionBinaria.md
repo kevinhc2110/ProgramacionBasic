@@ -1,4 +1,4 @@
-# Introducción a la Programación de Computadoras
+# Introducción Computación Binaria
 
 La **programación de computadoras** se basa en recibir entradas, procesarlas y generar una salida que resuelva un problema. El proceso que ocurre entre la entrada y la salida es conocido como una **caja negra**. Este curso se centra en comprender cómo funciona dicha caja negra y cómo las computadoras realizan tareas básicas como contar, almacenar información y comunicarse.
 
