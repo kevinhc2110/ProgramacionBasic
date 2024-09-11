@@ -112,3 +112,41 @@
 | **RDP**        | 3389            | Protocolo de Escritorio Remoto de Microsoft, para acceso remoto a escritorios.       |
 | **VNC**        | 5900            | Protocolo de Red de Computadoras Virtuales, para control remoto de escritorios.      |
 | **HTTP/2**     | 443             | Versión mejorada del protocolo HTTP, generalmente utiliza el mismo puerto que HTTPS. |
+
+---
+
+## Importancia de Conocer los Puertos de los Protocolos
+
+### Comunicación de Red
+
+- **Asignación de Puertos:**
+
+  Los protocolos de red utilizan puertos para enviar y recibir datos.
+
+- **Interoperabilidad:**
+
+  Saber qué puertos utilizan los diferentes servicios te asegura que tu aplicación pueda interactuar con otros servicios y sistemas que estén utilizando los mismos puertos.
+
+### Configuración y Seguridad
+
+- **Configuración de Firewall:**
+  Los firewalls y otras medidas de seguridad de red utilizan reglas basadas en puertos para permitir o bloquear tráfico.
+
+- **Seguridad:**
+  La exposición de ciertos puertos puede representar un riesgo de seguridad.
+
+### Depuración y Resolución de Problemas
+
+- **Diagnóstico de Problemas:**
+
+  Si encuentras problemas de conectividad o rendimiento en tu aplicación, conocer los puertos utilizados te ayuda a diagnosticar y solucionar estos problemas, ya que puedes verificar si el tráfico está llegando al puerto correcto y si hay conflictos o bloqueos.
+
+### Diseño de Arquitectura
+
+- **Diseño de Servicios:**
+
+  Al diseñar servicios y APIs, necesitas decidir qué puertos utilizar. Conocer los puertos estándar y sus usos puede ayudarte a elegir puertos adecuados y evitar conflictos con otros servicios.
+
+- **Escalabilidad:**
+
+  En sistemas distribuidos y en la nube, los puertos son clave para la comunicación entre servicios y nodos. Entender su uso te ayuda a diseñar arquitecturas escalables y eficientes.

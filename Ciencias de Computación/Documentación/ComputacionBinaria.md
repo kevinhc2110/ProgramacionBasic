@@ -42,12 +42,102 @@ El valor final es **4 + 0 + 1 = 5**.
 
 ## Bits y Bytes
 
-Las computadoras usualmente agrupan los bits en conjuntos de **8 bits**, conocidos como **bytes**. Un byte puede representar números del 0 al 255. Por ejemplo:
+Las computadoras usualmente agrupan los bits(Dígitos binarios) en conjuntos de **8 bits**, conocidos como **bytes**. Un byte puede representar números del 0 al 255. Por ejemplo:
 
 - **00000000** representa el número **0**.
 - **11111111** representa el número **255**.
 
 Esto se utiliza comúnmente en la representación de datos como colores y caracteres.
+
+---
+
+## Operaciones Binarias
+
+Las **operaciones binarias** son fundamentales para la manipulación de datos en el sistema binario. Las más comunes incluyen:
+
+### AND (Y lógico)
+
+- **Definición**: La operación AND compara dos bits y da como resultado 1 solo si ambos bits son 1. De lo contrario, el resultado es 0.
+- **Tabla de Verdad**:
+
+  | A   | B   | A AND B |
+  | --- | --- | ------- |
+  | 0   | 0   | 0       |
+  | 0   | 1   | 0       |
+  | 1   | 0   | 0       |
+  | 1   | 1   | 1       |
+
+- **Ejemplo**: `1010 AND 1100 = 1000`
+
+### OR (O lógico)
+
+- **Definición**: La operación OR compara dos bits y da como resultado 1 si al menos uno de los bits es 1. Si ambos bits son 0, el resultado es 0.
+- **Tabla de Verdad**:
+
+  | A   | B   | A OR B |
+  | --- | --- | ------ |
+  | 0   | 0   | 0      |
+  | 0   | 1   | 1      |
+  | 1   | 0   | 1      |
+  | 1   | 1   | 1      |
+
+- **Ejemplo**: `1010 OR 1100 = 1110`
+
+### XOR (O exclusivo)
+
+- **Definición**: La operación XOR compara dos bits y da como resultado 1 si solo uno de los bits es 1, pero 0 si ambos bits son iguales.
+- **Tabla de Verdad**:
+
+  | A   | B   | A XOR B |
+  | --- | --- | ------- |
+  | 0   | 0   | 0       |
+  | 0   | 1   | 1       |
+  | 1   | 0   | 1       |
+  | 1   | 1   | 0       |
+
+- **Ejemplo**: `1010 XOR 1100 = 0110`
+
+Estas operaciones son esenciales para el diseño de circuitos lógicos y la implementación de algoritmos en hardware y software.
+
+## Códigos de Error
+
+Los **códigos de error** son mecanismos diseñados para detectar y corregir errores en la transmisión y almacenamiento de datos binarios. Los errores pueden ocurrir debido a ruido en los canales de comunicación o fallos en los medios de almacenamiento.
+
+### Código de Paridad
+
+- **Definición**: Añade un bit de paridad a los datos para que el número total de bits 1 sea par (paridad par) o impar (paridad impar).
+- **Ejemplo**: Para los datos `1011` con paridad impar, el bit de paridad es `1` (10111).
+
+### Códigos de Hamming
+
+- **Definición**: Un código de corrección de errores que permite detectar y corregir errores de un solo bit en un bloque de datos.
+- **Ejemplo**: En un código de Hamming (7,4), se envían 7 bits para representar 4 bits de datos, añadiendo 3 bits de paridad para corrección.
+
+### Código Reed-Solomon
+
+- **Definición**: Un código de corrección de errores utilizado en diversas aplicaciones, como CD y DVD, capaz de corregir errores en bloques de datos.
+
+Estos códigos ayudan a garantizar la integridad de los datos en sistemas de comunicación y almacenamiento.
+
+## Codificación de Datos
+
+La **codificación de datos** es el proceso de transformar información en una forma binaria para almacenamiento o transmisión. Esta codificación es crucial para manejar datos de manera eficiente en sistemas digitales.
+
+### Codificación de Texto (ASCII y Unicode)
+
+- **ASCII**: Utiliza 7 bits para representar caracteres, proporcionando un conjunto básico de caracteres.
+- **Unicode**: Amplía ASCII para incluir caracteres de múltiples idiomas y símbolos, utilizando diferentes longitudes de bits (UTF-8, UTF-16, etc.).
+
+### Codificación de Imágenes (BMP, JPEG, PNG)
+
+- **BMP**: Un formato de imagen sin compresión que usa un esquema binario para representar píxeles.
+- **JPEG**: Usa compresión con pérdida para reducir el tamaño del archivo de imagen.
+- **PNG**: Utiliza compresión sin pérdida para mantener la calidad de la imagen.
+
+### Codificación de Video (MPEG, H.264)
+
+- **MPEG**: Un estándar para la compresión de video y audio.
+- **H.264**: Un estándar de compresión de video eficiente que ofrece alta calidad a tasas de bits más bajas.
 
 ---
 
@@ -84,35 +174,6 @@ El estándar ASCII asigna un valor a cada letra, número y símbolo. Por ejemplo
 
 ---
 
-## Arte de Píxeles
-
-Un **píxel** es el bloque más pequeño que compone una imagen digital. Las imágenes están formadas por una cuadrícula de píxeles, donde cada uno tiene un color específico.
-
-En imágenes **blanco y negro**, los **0s** y **1s** pueden representar colores:
-
-- **0** → negro
-- **1** → blanco
-
-Esto forma la base del arte de píxeles, donde imágenes completas pueden ser generadas usando matrices de números binarios.
-
----
-
-## Colores y el Sistema RGB
-
-Los colores en la computadora se representan mediante el sistema **RGB** (Red, Green, Blue). Cada color se forma mezclando diferentes cantidades de rojo, verde y azul.
-
-### Ejemplo en Photoshop
-
-En programas como Photoshop, puedes ver la combinación de colores RGB. Por ejemplo:
-
-- **Rojo:** (255, 0, 0)
-- **Verde:** (0, 255, 0)
-- **Azul:** (0, 0, 255)
-
-Además del sistema RGB, los colores también pueden representarse en **hexadecimal**.
-
----
-
 ## Sistema Hexadecimal
 
 El **hexadecimal** es un sistema numérico en **base 16**, que incluye los dígitos del 0 al 9, y las letras **a** a **f** para representar los valores del 10 al 15.
@@ -144,5 +205,46 @@ El hexadecimal es útil para representar valores binarios de forma compacta. Por
 - El binario **0000 1111 1111** es **0ff** en hexadecimal.
 
 Por eso, los colores en formato hexadecimal usan 6 dígitos, como **#ff0000** para el rojo, lo que representa la máxima cantidad de rojo y ninguna cantidad de verde o azul.
+
+---
+
+## Arte de Píxeles
+
+Un **píxel** es el bloque más pequeño que compone una imagen digital. Las imágenes están formadas por una cuadrícula de píxeles, donde cada uno tiene un color específico.
+
+En imágenes **blanco y negro**, los **0s** y **1s** pueden representar colores:
+
+- **0** → negro
+- **1** → blanco
+
+Esto forma la base del arte de píxeles, donde imágenes completas pueden ser generadas usando matrices de números binarios.
+
+### Ejemplo de Arte de Píxeles
+
+Una imagen en blanco y negro puede ser representada como una matriz de 0s y 1s, donde cada 0 representa un píxel negro y cada 1 un píxel blanco.
+
+---
+
+## Colores y el Sistema RGB
+
+Los colores en la computadora se representan mediante el sistema **RGB** (Red, Green, Blue). Cada color se forma mezclando diferentes cantidades de rojo, verde y azul.
+
+### Ejemplos de Colores en RGB
+
+En programas como Photoshop, puedes ver la combinación de colores RGB. Por ejemplo:
+
+- **Rojo:** (255, 0, 0)
+- **Verde:** (0, 255, 0)
+- **Azul:** (0, 0, 255)
+
+Cada componente se mide en un rango de 0 a 255.
+
+### Representación en Hexadecimal
+
+Los colores también se representan en hexadecimal:
+
+- **#ff0000** para rojo
+- **#00ff00** para verde
+- **#0000ff** para azul
 
 ---

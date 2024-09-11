@@ -1,5 +1,7 @@
 # Estructuras de Datos Más Importantes
 
+Una estructura de datos es una forma de organizar y almacenar datos en la memoria de una computadora de manera eficiente, de modo que se pueda acceder, modificar, y utilizar de manera óptima para diferentes operaciones.
+
 ## 1. Estructuras de Datos Lineales
 
 - **Array (Arreglo)**
