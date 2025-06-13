@@ -1,8 +1,8 @@
-# 17. Seguridad en Programación Go
+# Seguridad en Programación Go
 
 La seguridad en la programación es un aspecto fundamental que debe ser considerado en todas las fases del ciclo de desarrollo de software. Proteger las aplicaciones de ataques y vulnerabilidades es crucial para garantizar la integridad, confidencialidad y disponibilidad de los sistemas. A continuación, se abordan los principales aspectos de seguridad en programación, aplicables a múltiples entornos y lenguajes de desarrollo.
 
-## 17.1. Autenticación y Autorización
+## Autenticación y Autorización
 
 - Autenticación se refiere a la verificación de la identidad de los usuarios, asegurándose de que sean quienes dicen ser.
 - Autorización se enfoca en verificar si un usuario autenticado tiene permiso para realizar una acción o acceder a un recurso.
@@ -64,9 +64,7 @@ La seguridad en la programación es un aspecto fundamental que debe ser consider
     - **Client Credentials Grant:** Para autenticación entre servidores.
     - **Resource Owner Password Credentials:** Utilizado cuando el usuario confía completamente en la aplicación.
 
----
-
-## 17.2. Cifrado de Datos
+## Cifrado de Datos
 
 El cifrado es una técnica clave para proteger la información sensible, tanto en tránsito como en reposo.
 
@@ -119,14 +117,14 @@ El cifrado es una técnica clave para proteger la información sensible, tanto e
 
     ```
 
-## 17.3. Certificados SSL/TLS
+## Certificados SSL/TLS
 
 Los certificados SSL/TLS son fundamentales para garantizar conexiones seguras a través de HTTPS. Estos certificados utilizan cifrado asimétrico para proteger la comunicación entre el cliente y el servidor, y evitar que los datos sean interceptados por terceros.
 
 - SSL (Secure Sockets Layer) y TLS (Transport Layer Security) garantizan la integridad y la confidencialidad de los datos en tránsito.
 - Let's Encrypt: Es una autoridad de certificación gratuita que facilita la implementación de SSL en aplicaciones.
 
-## 17.4. Prevención de Vulnerabilidades
+## Prevención de Vulnerabilidades
 
 Proteger una aplicación implica tomar medidas contra ataques comunes que podrían comprometer la seguridad de los sistemas.
 
@@ -237,19 +235,13 @@ Proteger una aplicación implica tomar medidas contra ataques comunes que podrí
   OWASP (Open Web Application Security Project) es una comunidad que publica recursos, guías y estándares para mejorar la seguridad en aplicaciones web.
 
   - El proyecto OWASP Top 10 lista las vulnerabilidades web más críticas.
-
   - CORS mal configurado puede llevar a Cross-Site Request Forgery (CSRF) y otras vulnerabilidades listadas en OWASP.
 
 - ### Puntos importantes según OWASP para CORS
 
   - No usar "\*" en AllowedOrigins si usas credenciales (cookies, headers de autenticación). Siempre lista explícitamente los orígenes confiables.
-
   - Limita los métodos HTTP permitidos.
-
   - Valida y limita los headers permitidos.
-
   - Si usas cookies o tokens, configura AllowCredentials: true y nunca AllowedOrigins: ["*"].
-
   - Usa HTTPS para proteger la comunicación.
-
-  - **Implementa otras capas de seguridad**: CSRF tokens, validación backend, autenticación robusta.
+  - **Implementa otras capas de seguridad:** CSRF tokens, validación backend, autenticación robusta.

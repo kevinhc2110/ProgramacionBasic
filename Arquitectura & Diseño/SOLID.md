@@ -12,8 +12,6 @@ SOLID es un conjunto de principios de diseño de software que mejora la legibili
 4. **I** - Interface Segregation Principle (ISP)
 5. **D** - Dependency Inversion Principle (DIP)
 
----
-
 ## 1. **Single Responsibility Principle (SRP)**
 
 Cada clase o módulo debe tener una única responsabilidad o motivo para cambiar. Esto significa que debe existir una única razón para que un módulo o clase sea modificado.
@@ -93,7 +91,40 @@ class EmailService:
 
 ```
 
----
+### Ejemplo en Typescript (SRP)
+
+```ts
+// Violando SRP
+class User {
+  constructor(public name: string, public email: string) {}
+
+  saveToDatabase() {
+    console.log("Saving user to the database");
+  }
+
+  sendEmail() {
+    console.log("Sending welcome email");
+  }
+}
+
+// Correcto: separación de responsabilidades
+
+class User {
+  constructor(public name: string, public email: string) {}
+}
+
+class UserRepository {
+  save(user: User) {
+    console.log(`Saving user ${user.name} to the database`);
+  }
+}
+
+class EmailService {
+  sendWelcomeEmail(user: User) {
+    console.log(`Sending welcome email to ${user.email}`);
+  }
+}
+```
 
 ## 2. **Open/Closed Principle (OCP)**
 
@@ -176,7 +207,44 @@ class Square(Shape):
 
 ```
 
----
+### Ejemplo en Typescript (OCP)
+
+```ts
+// Violando OCP
+class Shape {
+  constructor(public type: string) {}
+
+  area(): number {
+    if (this.type === "circle") {
+      return Math.PI * 5 * 5;
+    } else if (this.type === "square") {
+      return 4 * 4;
+    }
+    return 0;
+  }
+}
+
+// Correcto
+interface Shape {
+  area(): number;
+}
+
+class Circle implements Shape {
+  constructor(public radius: number) {}
+
+  area(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+class Square implements Shape {
+  constructor(public side: number) {}
+
+  area(): number {
+    return this.side * this.side;
+  }
+}
+```
 
 ## 3. **Liskov Substitution Principle (LSP)**
 
@@ -267,7 +335,45 @@ class Square(Shape):
 
 ```
 
----
+### Ejemplo en Typescript (LSP)
+
+```ts
+// Violando LSP
+class Rectangle {
+  constructor(public width: number, public height: number) {}
+
+  area(): number {
+    return this.width * this.height;
+  }
+}
+
+class Square extends Rectangle {
+  constructor(side: number) {
+    super(side, side);
+  }
+}
+
+// Correcto
+interface Shape {
+  area(): number;
+}
+
+class Rectangle implements Shape {
+  constructor(public width: number, public height: number) {}
+
+  area(): number {
+    return this.width * this.height;
+  }
+}
+
+class Square implements Shape {
+  constructor(public side: number) {}
+
+  area(): number {
+    return this.side * this.side;
+  }
+}
+```
 
 ## 4. **Interface Segregation Principle (ISP)**
 
@@ -349,7 +455,50 @@ class Developer(Worker):
 
 ```
 
----
+### Ejemplo en Typescript (ISP)
+
+```ts
+// Violando ISP
+interface Worker {
+  work(): void;
+  eat(): void;
+}
+
+class Developer implements Worker {
+  work() {
+    console.log("Coding...");
+  }
+
+  eat() {
+    // No necesario en este contexto
+  }
+}
+
+// Correcto
+interface Workable {
+  work(): void;
+}
+
+interface Eatable {
+  eat(): void;
+}
+
+class Developer implements Workable {
+  work() {
+    console.log("Coding...");
+  }
+}
+
+class Human implements Workable, Eatable {
+  work() {
+    console.log("Working...");
+  }
+
+  eat() {
+    console.log("Eating...");
+  }
+}
+```
 
 ## 5. **Dependency Inversion Principle (DIP)**
 
@@ -428,4 +577,53 @@ class App:
     def start(self):
         self.db.connect()
 
+```
+
+### Ejemplo en Typescript (DIP)
+
+```ts
+// Violando DIP
+class MySQLDatabase {
+  connect() {
+    console.log("Connecting to MySQL...");
+  }
+}
+
+class App {
+  private db = new MySQLDatabase();
+
+  start() {
+    this.db.connect();
+  }
+}
+
+// Correcto
+interface Database {
+  connect(): void;
+}
+
+class MySQLDatabase implements Database {
+  connect() {
+    console.log("Connecting to MySQL...");
+  }
+}
+
+class PostgreSQLDatabase implements Database {
+  connect() {
+    console.log("Connecting to PostgreSQL...");
+  }
+}
+
+class App {
+  constructor(private db: Database) {}
+
+  start() {
+    this.db.connect();
+  }
+}
+
+// Uso
+const db = new MySQLDatabase();
+const app = new App(db);
+app.start();
 ```
