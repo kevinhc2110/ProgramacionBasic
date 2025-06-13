@@ -1,0 +1,42 @@
+# 21. Versiones y Mantenimiento del Código en Go
+
+## 21.1. Semántica de Versiones (SemVer)
+
+La semántica de versiones es una convención para versionar software que sigue el formato MAJOR.MINOR.PATCH (por ejemplo, v1.0.0). Este esquema permite entender fácilmente el impacto de los cambios en una nueva versión.
+
+- ### MAJOR (Mayor)
+
+  Incrementa cuando se hacen cambios incompatibles en la API o se introducen modificaciones importantes que podrían romper la compatibilidad con versiones anteriores.
+
+  - **Ejemplo:** Cambiar la firma de una función pública o eliminar una funcionalidad.
+
+- ### MINOR (Menor)
+
+  Incrementa cuando se agregan nuevas funcionalidades de manera compatible con versiones anteriores.
+
+  - **Ejemplo:** Añadir una nueva función sin modificar las existentes.
+
+- ### PATCH (Parche)
+
+  Incrementa cuando se corrigen errores o se realizan mejoras internas sin cambiar la API ni añadir nuevas funcionalidades.
+
+  - **Ejemplo:** Solucionar un bug.
+
+- **Ejemplo de Versionado:**
+
+  - **v1.0.0:** Primera versión estable.
+  - **v1.1.0:** Añadir una nueva funcionalidad manteniendo compatibilidad.
+  - **v1.1.1:** Corregir un error menor sin cambiar las funcionalidades.
+
+- ### Herramientas en Go para Versionado
+
+  Go gestiona las versiones de los módulos utilizando `go.mod` y admite el uso de `SemVer` para paquetes y dependencias externas.
+
+  ```go
+  module github.com/user/project
+
+  go 1.20
+
+  require github.com/some/package v1.2.3
+
+  ```

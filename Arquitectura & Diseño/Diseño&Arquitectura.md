@@ -259,24 +259,23 @@ En Golang, los patrones de diseño no se implementan exactamente de la misma man
 
 ## 18.5. Estructura de carpetas en Go
 
-```sql
-/user-app
-|-- /cmd
-|   |-- main.go
-|
-|-- /internal
-|   |-- /user
-|   |   |-- service.go
-|   |   |-- repository.go
-|   |   |-- model.go
-|   |   |-- /adapter
-|   |       |-- /http
-|   |       |   |-- handler.go
-|   |       |-- /db
-|   |           |-- postgres.go
-|
-|-- /pkg
-|-- go.mod
-|-- go.sum
-
+```bash
+    /user-app
+    |-- /cmd
+    |   |-- main.go
+    |
+    |-- /internal
+    |   |-- /user
+    |   |   |-- service.go
+    |   |   |-- repository.go
+    |   |   |-- model.go
+    |   |   |-- /adapter
+    |   |       |-- /http
+    |   |       |   |-- handler.go
+    |   |       |-- /db
+    |   |           |-- postgres.go
+    |
+    |-- /pkg
+    |-- go.mod
+    |-- go.sum
 ```

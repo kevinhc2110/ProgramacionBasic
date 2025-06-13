@@ -119,16 +119,12 @@ El cifrado es una técnica clave para proteger la información sensible, tanto e
 
     ```
 
----
-
 ## 17.3. Certificados SSL/TLS
 
 Los certificados SSL/TLS son fundamentales para garantizar conexiones seguras a través de HTTPS. Estos certificados utilizan cifrado asimétrico para proteger la comunicación entre el cliente y el servidor, y evitar que los datos sean interceptados por terceros.
 
 - SSL (Secure Sockets Layer) y TLS (Transport Layer Security) garantizan la integridad y la confidencialidad de los datos en tránsito.
 - Let's Encrypt: Es una autoridad de certificación gratuita que facilita la implementación de SSL en aplicaciones.
-
----
 
 ## 17.4. Prevención de Vulnerabilidades
 

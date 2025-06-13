@@ -1,0 +1,168 @@
+# Documentacion de codigo
+
+Documentar el código de forma clara y efectiva es fundamental para que otros desarrolladores (y tú mismo en el futuro) puedan entenderlo, mantenerlo y reutilizarlo.
+
+## 1. Comentarios en el código
+
+Usa comentarios para explicar **el porqué** más que **el qué**. El código debe hablar por sí mismo, pero los comentarios explican decisiones, intenciones o aspectos no evidentes.
+
+**Ejemplo (Go):**
+
+```go
+// Calcula el total con impuesto aplicado. Se usa una tasa fija del 19%.
+// Esto es temporal hasta que se integre la API de tasas dinámicas.
+func calcularTotalConImpuesto(subtotal float64) float64 {
+    return subtotal * 1.19
+}
+```
+
+---
+
+## 2. Comentarios de funciones/métodos
+
+**Incluye**:
+
+- Qué hace la función.
+- Qué parámetros recibe.
+- Qué retorna.
+- Notas especiales (errores, condiciones, etc.).
+
+**Ejemplo (Python):**
+
+```python
+def procesar_orden(orden):
+    """
+    Procesa una orden del sistema.
+
+    Args:
+        orden (dict): Diccionario con los datos de la orden.
+
+    Returns:
+        bool: True si se procesó correctamente, False en caso de error.
+
+    Raises:
+        ValueError: Si los datos de la orden son inválidos.
+    """
+    # lógica de procesamiento...
+```
+
+---
+
+## 📦 3. Documentación de archivos/módulos
+
+Al principio de cada archivo importante, puedes incluir un bloque que explique el propósito general del archivo, dependencias importantes y cualquier contexto.
+
+**Ejemplo (JavaScript):**
+
+```js
+/**
+ * Módulo de autenticación de usuarios.
+ * Se encarga de login, logout y verificación de tokens.
+ *
+ * Requiere: express, jwt, dotenv
+ * Autor: Kevin Herrera
+ */
+```
+
+---
+
+## 🧩 4. Documentar estructuras de datos y modelos
+
+Cuando defines estructuras complejas (como structs, clases o JSONs anidados), documenta cada campo si es necesario.
+
+**Ejemplo (Go):**
+
+```go
+// Usuario representa un usuario en el sistema.
+type Usuario struct {
+    ID        int       // Identificador único
+    Nombre    string    // Nombre completo
+    Correo    string    // Correo electrónico, debe ser único
+    FechaAlta time.Time // Fecha de registro del usuario
+}
+```
+
+---
+
+## 📚 5. Generadores de documentación automática
+
+Usa herramientas que generen documentación legible desde los comentarios, por ejemplo:
+
+- **Go**: Usa `godoc` y sigue el estilo de comentarios encima de funciones públicas.
+- **Python**: Usa `docstrings` y puedes generar documentación con herramientas como **Sphinx**.
+- **JavaScript/TypeScript**: Usa **JSDoc**.
+- **Java**: Usa **Javadoc**.
+- **C#**: Usa comentarios XML para `///`.
+
+---
+
+## 6. Comentarios para APIs REST (si aplica)
+
+Si estás desarrollando APIs, documenta los endpoints:
+
+- Método HTTP (GET, POST, etc.)
+
+- Ruta
+
+- Parámetros (path, query, body)
+
+- Ejemplos de respuesta
+
+- Códigos de estado (200 OK, 404 Not Found, etc.)
+
+```go
+  // @Summary Obtiene un usuario por ID
+  // @Description Devuelve un usuario específico desde la base de datos.
+  // @Param id path int true "ID del usuario"
+  // @Success 200 {object} Usuario
+  // @Failure 404 {object} ErrorResponse
+  // @Router /usuarios/{id} [get]
+  func obtenerUsuario(c echo.Context) error {
+      // ...
+  }
+```
+
+## 7. Documentar pruebas
+
+Documenta brevemente lo que verifica cada test si no es evidente.
+
+```go
+  // Test que valida que el total calculado incluya el 19% de impuesto correctamente.
+  func TestCalcularTotalConImpuesto(t *testing.T) {
+      // ...
+  }
+```
+
+## 8. Anotaciones de TODO, FIXME, HACK
+
+Usa etiquetas estándar para facilitar el rastreo de tareas o problemas:
+
+- **TODO**: para tareas pendientes.
+
+- **FIXME**: para errores conocidos.
+
+- **HACK**: para soluciones temporales que deben mejorarse.
+
+```go
+  // TODO: Reemplazar esto con lógica basada en configuración dinámica.
+```
+
+## ✅ 9. Buenas prácticas
+
+- Escribe en el idioma en que está el proyecto (inglés o español).
+- Sé breve pero claro.
+- Evita repetir lo que el código ya dice.
+- Actualiza los comentarios si cambia el código.
+- No abuses: demasiados comentarios pueden ser contraproducentes si explican obviedades.
+
+---
+
+## 🧠 Ejemplo resumen (Go)
+
+```go
+// sumaEnteros devuelve la suma de dos enteros.
+// Es una función auxiliar para cálculos básicos.
+func sumaEnteros(a, b int) int {
+    return a + b
+}
+```
