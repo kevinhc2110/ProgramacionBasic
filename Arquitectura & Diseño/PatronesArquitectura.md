@@ -51,7 +51,7 @@ project-root/
 
 **Muy popular en:** Go.
 
-```csharp
+```text
 project-root/
 │
 ├── app/                    # Lógica de negocio (core)
@@ -84,7 +84,7 @@ project-root/
 
 **Requiere conocimientos de:** Docker, Kubernetes, comunicación por APIs/gRPC, observabilidad.
 
-```csharp
+```text
 project-root/
 │
 ├── services/
@@ -122,7 +122,7 @@ project-root/
 
 **Tecnologías comunes:** Kafka, RabbitMQ, Redis Streams, NATS.
 
-```csharp
+```text
 project-root/
 │
 ├── producers/              # Publicadores de eventos
@@ -154,7 +154,7 @@ project-root/
 
 **Plataformas:** AWS Lambda, Google Cloud Functions, Azure Functions.
 
-```csharp
+```text
 project-root/
 │
 ├── functions/
@@ -184,7 +184,7 @@ project-root/
 
 **Herramientas comunes:** MLFlow, Airflow, DVC, FastAPI, Kubeflow.
 
-```csharp
+```text
 project-root/
 │
 ├── data/
@@ -225,7 +225,7 @@ project-root/
 - Buena separación lógica.
 - Base para aprender patrones de diseño comunes.
 
-```csharp
+```text
 project-root/
 │
 ├── presentation/           # Capa de presentación (API, HTTP handlers)
@@ -261,7 +261,7 @@ project-root/
 - Escalable, fácil de mantener y probar por separado.
 - Posible evolución hacia microservicios.
 
-```csharp
+```text
 project-root/
 │
 ├── modules/                      # Todos los módulos del sistema
