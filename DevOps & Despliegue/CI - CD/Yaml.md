@@ -32,8 +32,6 @@ YAML es un formato de serialización de datos legible por humanos, comúnmente u
 | Parsing     | ⚠️ Más complejo | ✅ Simple      | ⚠️ Complejo |
 | Tamaño      | ✅ Compacto     | ✅ Compacto    | ❌ Verboso  |
 
----
-
 ## 2. Sintaxis Básica
 
 ### Reglas fundamentales
@@ -107,8 +105,6 @@ falso3: FALSE
 falso4: no
 falso5: off
 ```
-
----
 
 ## 3. Tipos de Datos
 
@@ -224,8 +220,6 @@ empresa:
       departamento: Marketing
 ```
 
----
-
 ## 4. Estructuras Complejas
 
 ### Anclas y referencias (&, \*)
@@ -304,7 +298,6 @@ imagen: !!binary |
 ### Documentos múltiples
 
 ```yaml
----
 # Primer documento
 apiVersion: v1
 kind: ConfigMap
@@ -313,7 +306,7 @@ metadata:
 data:
   key1: value1
 
----
+
 # Segundo documento
 apiVersion: v1
 kind: Secret
@@ -322,7 +315,7 @@ metadata:
 data:
   password: cGFzc3dvcmQ=
 
----
+
 # Tercer documento
 apiVersion: apps/v1
 kind: Deployment
@@ -527,8 +520,6 @@ services:
       retries: 3
       start_period: 40s
 ```
-
----
 
 ## 6. Herramientas y Validación
 
